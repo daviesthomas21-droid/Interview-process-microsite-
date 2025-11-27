@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Interview Process - Tailwind Design</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-blue': '#1e40af',
+                        'soft-gray': '#f4f4f7',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styling for the timeline effect */
+        .timeline-item {
+            position: relative;
+            padding-left: 3rem; /* Space for the line and circle */
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: 10px; /* Position the line */
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #d1d5db; /* Light gray line */
+        }
+
+        .timeline-item:last-child:before {
+            height: 1.5rem; /* Stop the line halfway for the last element */
+        }
+
+        .timeline-circle {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            z-index: 10;
+            box-shadow: 0 0 0 5px #f4f4f7; /* Ring effect */
+        }
+
+        /* Color variations for stages */
+        .stage-1 .timeline-circle { background-color: #059669; /* Green */ }
+        .stage-2 .timeline-circle { background-color: #f59e0b; /* Amber */ }
+        .stage-3 .timeline-circle { background-color: #ef4444; /* Red */ }
+
+        /* Ensure the body uses the custom font */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+    </style>
+</head>
+<body class="bg-soft-gray min-h-screen p-4 sm:p-8">
+
+    <div class="max-w-4xl mx-auto bg-white p-6 md:p-10 rounded-xl shadow-2xl">
+
+        <!-- Header Section -->
+        <header class="text-center mb-10">
+            <h1 class="text-4xl font-extrabold text-primary-blue mb-2">Our Interview Process</h1>
+            <p class="text-xl text-gray-500">A step-by-step guide to your application journey with us.</p>
+        </header>
+
+        <!-- Timeline Container -->
+        <div class="timeline border-l-2 border-gray-300 ml-3 md:ml-0 md:pl-6">
+
+            <!-- Stage 1: Recruiter Screen -->
+            <div class="timeline-item stage-1">
+                <div class="timeline-circle">1</div>
+                <div class="p-4 bg-white rounded-lg shadow-lg border-t-4 border-green-600 ml-4">
+                    <h2 class="text-2xl font-semibold text-gray-800">Stage 1: Recruiter Screen</h2>
+                    <p class="text-primary-blue font-medium mt-1 mb-3">🕒 Approx. 30 Minutes</p>
+                    <p class="text-gray-600">
+                        This initial discussion is focused on understanding your career aspirations, background, and ensuring alignment with the role's requirements. It's a great opportunity for you to ask questions about our company culture and the position details.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Stage 2: Hiring Manager Interview -->
+            <div class="timeline-item stage-2">
+                <div class="timeline-circle">2</div>
+                <div class="p-4 bg-white rounded-lg shadow-lg border-t-4 border-amber-500 ml-4">
+                    <h2 class="text-2xl font-semibold text-gray-800">Stage 2: Hiring Manager Interview</h2>
+                    <p class="text-primary-blue font-medium mt-1 mb-3">🕒 Approx. 45 Minutes</p>
+                    <p class="text-gray-600">
+                        You will meet directly with the hiring manager to dive deeper into your technical and soft skills. This stage is behavioral and competency-based, examining how your past experiences directly relate to the challenges of the role.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Stage 3: Assessment of Key Skills -->
+            <div class="timeline-item stage-3">
+                <div class="timeline-circle">3</div>
+                <div class="p-4 bg-white rounded-lg shadow-lg border-t-4 border-red-500 ml-4">
+                    <h2 class="text-2xl font-semibold text-gray-800">Stage 3: Assessment of Key Skills</h2>
+                    <p class="text-primary-blue font-medium mt-1 mb-3">🕒 Approx. 1 Hour</p>
+                    <p class="text-gray-600">
+                        The final stage is a practical assessment, which may involve a take-home task, a live technical challenge, or a portfolio review, allowing you to demonstrate the core skills essential for success in this position.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer/Next Steps -->
+        <div class="mt-10 pt-6 border-t border-gray-200 text-center">
+            <h3 class="text-2xl font-bold text-gray-700 mb-3">What Happens Next?</h3>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+                Once the final stage is complete, our team will review all feedback and aim to provide a decision or final update within 3-5 business days. We appreciate your patience and interest in joining our team!
+            </p>
+            <a href="#" class="inline-block mt-4 px-6 py-2 bg-primary-blue text-white font-semibold rounded-full hover:bg-blue-800 transition duration-300 shadow-md">
+                View Open Roles
+            </a>
+        </div>
+
+    </div>
+
+</body>
+</html>
